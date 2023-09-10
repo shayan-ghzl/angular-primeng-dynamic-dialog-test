@@ -45,11 +45,13 @@ export class App {
   constructor(private dialogService: DialogService) {}
 
   @HostListener('document:keyup', ['$event'])
-  openDynamicDialog(): void {
-    const ref = this.dialogService.open(SampleDialog, {
-      header: 'i am a dynamic dialog',
-      width: '85%',
-    });
+  openDynamicDialog(event: KeyboardEvent): void {
+    if (event.key != 'Escape') {
+      const ref = this.dialogService.open(SampleDialog, {
+        header: 'i am a dynamic dialog',
+        width: '85%',
+      });
+    }
   }
 }
 
