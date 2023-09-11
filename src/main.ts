@@ -1,14 +1,12 @@
 import 'zone.js/dist/zone';
 import { Component, importProvidersFrom, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 @Component({
-  selector: 'my-app',
+  selector: 'my-dialog',
   standalone: true,
-  imports: [CommonModule],
   template: `
     <h2>this is a dialog</h2>
   `,
@@ -18,7 +16,6 @@ export class SampleDialog {}
 @Component({
   selector: 'my-app',
   standalone: true,
-  imports: [CommonModule],
   template: `
     <h2>issue target:</h2>
     <p>dynamic dialog module</p>
